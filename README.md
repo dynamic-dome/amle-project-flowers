@@ -114,7 +114,7 @@ It opens in your browser. Choose a model and upload a photo of a rose, a sunflow
 > [!NOTE]
 > The app passes the raw photo, with pixel values from 0 to 255, to the model. It works with models that include their preprocessing, such as `preprocess_input`, as a step inside the model.
 
-**Two more designs of the app.** Both use the same model (`models/step5_finetuned.keras`), the same photo preparation and the same 0.90 threshold. Each has its own theme in a `.streamlit/config.toml` next to its `app.py`, and both start from the project root folder:
+**Two more designs of the app.** The mood design runs live at **https://flower-moods.streamlit.app** (Streamlit Community Cloud, Python 3.13, main file `emotion_editions/app.py`). Both use the same model (`models/step5_finetuned.keras`), the same photo preparation and the same 0.90 threshold. Each has its own theme in a `.streamlit/config.toml` next to its `app.py`, and both start from the project root folder:
 
 ```bash
 uv run streamlit run care_card/app.py
