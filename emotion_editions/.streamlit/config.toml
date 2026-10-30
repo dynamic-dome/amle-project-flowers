@@ -1,0 +1,18 @@
+# A dark base in the Grounded colours (the default mood). The page CSS in moods.py takes over from here;
+# these values only show for a moment on first load and for any widget the mood CSS does not touch.
+# Streamlit reads this file next to the script, so it applies when you run: uv run streamlit run emotion_editions/app.py
+[theme]
+base = "dark"
+primaryColor = "#DAB04E"
+backgroundColor = "#111318"
+secondaryBackgroundColor = "#15181E"
+textColor = "#E4E0D8"
+
+[server]
+runOnSave = false
+
+[client]
+toolbarMode = "minimal"
+
+[browser]
+gatherUsageStats = false

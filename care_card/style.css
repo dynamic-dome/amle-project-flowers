@@ -1,0 +1,57 @@
+/* Flower care desk. Boldness lives in ONE place: the care card, built like a plant label from a garden
+   centre. Everything else stays quiet. Each flower brings its own colour through three CSS variables:
+   --tone (band), --on (text on the band), --deep (readable text colour on white). */
+
+.st-key-page { max-width: 980px; margin: 0 auto; }
+[data-testid="stHeader"] { background: transparent; }
+
+.wordmark { font-family: 'Fraunces', serif; font-weight: 600; font-size: 1.05rem; color: #0A6B3A; margin-bottom: .4rem; }
+.wordmark i { display: inline-block; width: .75em; height: .75em; margin-right: .5em; background: #0A6B3A;
+              border-radius: 0 100% 0 100%; transform: rotate(-8deg); }
+
+/* Photo tip: always visible, deliberately plain */
+.tip { border-left: 4px solid #0A6B3A; background: #E3ECE1; padding: .7rem 1rem; border-radius: 0 12px 12px 0;
+       font-size: .95rem; margin: .5rem 0 1rem; }
+
+[data-testid="stImage"] img { max-height: 320px; object-fit: contain; object-position: left top; }
+
+/* The verdict: the first thing to read, big enough for a projector, in the colour of the flower (the same deep tones as the card) */
+.verdict { --deep: #0B0F1A; margin: .2rem 0 .8rem; padding-left: 1rem; border-left: 6px solid var(--deep); }
+.verdict.rose      { --deep: #A82560; }
+.verdict.sunflower { --deep: #7D6419; }
+.verdict.tulip     { --deep: #6F3C9C; }
+.verdict.unsure    { --deep: #8A3B00; }
+.verdict .big { font-family: 'Fraunces', serif; font-weight: 600; font-size: clamp(1.9rem, 4.2vw, 2.7rem); line-height: 1.12; color: var(--deep); }
+.verdict .also { color: #3D4F43; font-size: 1rem; margin-top: .35rem; }
+.verdict .rule { color: #0B0F1A; font-size: 1rem; font-weight: 600; margin-top: .35rem; }
+
+/* The care card */
+.card { --tone: #0A6B3A; --on: #fff; --deep: #0A6B3A;
+        max-width: 420px; background: #fff; color: #0B0F1A; overflow: hidden;
+        border: 2px solid #0B0F1A; border-radius: 22px 22px 6px 6px; box-shadow: 6px 6px 0 var(--tone);
+        font-family: 'Inter', sans-serif; line-height: 1.45; }
+.card.rose      { --tone: #C0306A; --on: #fff;    --deep: #A82560; }
+.card.sunflower { --tone: #E8B923; --on: #0B0F1A; --deep: #7D6419; }
+.card.tulip     { --tone: #6F3C9C; --on: #fff;    --deep: #6F3C9C; }
+.card .band { position: relative; background: var(--tone); color: var(--on); padding: 34px 22px 16px; }
+.card .band::before { content: ""; position: absolute; top: 11px; left: 50%; width: 14px; height: 14px; margin-left: -7px;
+                      border-radius: 50%; background: #F4F7F2; border: 2px solid #0B0F1A; }  /* the stake hole */
+.card .name { font-family: 'Fraunces', serif; font-weight: 600; font-size: 2.7rem; line-height: 1; }
+.card .latin { font-style: italic; margin-top: .3rem; font-size: .95rem; }
+.card .row { display: grid; grid-template-columns: 5.4rem 1fr; gap: 12px; padding: 13px 22px; border-top: 1px solid #D5DFD3; }
+.card .row p { margin: 0; font-size: .95rem; }
+.card .what { font-family: 'Fraunces', serif; font-style: italic; font-weight: 600; color: var(--deep); }
+.card .season { background: #E3ECE1; border-top: 2px solid #0B0F1A; }
+.card .foot { padding: 10px 22px 12px; border-top: 2px dashed #9FB3A3; font-size: .8rem; color: #3D4F43; }
+
+/* Empty / waiting-for-staff card: same outline, no content */
+.ghost { max-width: 420px; padding: 2.2rem 1.5rem; border: 2px dashed #7B8F80; border-radius: 22px 22px 6px 6px;
+         background: rgba(227, 236, 225, .55); color: #2E4034; }
+.ghost .name { font-family: 'Fraunces', serif; font-weight: 600; font-size: 1.5rem; line-height: 1.15; margin-bottom: .5rem; }
+.ghost p { margin: 0; }
+
+@media (max-width: 640px) {
+  .card .name { font-size: 2.3rem; }
+  .card .row { grid-template-columns: 4.6rem 1fr; padding: 12px 16px; }
+  .card .band, .card .foot { padding-left: 16px; padding-right: 16px; }
+}

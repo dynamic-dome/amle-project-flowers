@@ -21,6 +21,9 @@ By the end of this project, you should be able to:
 | File / Folder | Description |
 |---|---|
 | [**app.py**](app.py) | A Streamlit app that loads a saved model from `models/` and classifies an uploaded photo (step 7). |
+| [**care_card/**](care_card/) | A second design of the app, "Flower care desk": the result is a care card styled like a plant label; below 0.90 a member of staff checks the photo. |
+| [**emotion_editions/**](emotion_editions/) | A third design, "Emotion editions": eight moods change colours, type, shapes and the voice of the text; in Auto mode the mood follows the recognised flower. |
+| [**talk/**](talk/) | The 5-minute talk (narrated video, slides, speaker script) and a short video of the two extra app designs. |
 | [**Assets**](assets/) | The diagram of the project's steps shown in the notebook, with its Mermaid source in `assets/diagrams/`. |
 | [**Data**](data/) | The photos, one folder per flower: 100 per class in `train/`, 20 per class in `validation/` and 10 per class in `test/`, with the photographers in `LICENSE.txt`. |
 | [**pyproject.toml**](pyproject.toml) | Project configuration and dependencies. |
@@ -110,6 +113,15 @@ It opens in your browser. Choose a model and upload a photo of a rose, a sunflow
 
 > [!NOTE]
 > The app passes the raw photo, with pixel values from 0 to 255, to the model. It works with models that include their preprocessing, such as `preprocess_input`, as a step inside the model.
+
+**Two more designs of the app.** Both use the same model (`models/step5_finetuned.keras`), the same photo preparation and the same 0.90 threshold. Each has its own theme in a `.streamlit/config.toml` next to its `app.py`, and both start from the project root folder:
+
+```bash
+uv run streamlit run care_card/app.py
+uv run streamlit run emotion_editions/app.py
+```
+
+They load their fonts from Google Fonts; without internet they fall back to system fonts.
 
 ---
 

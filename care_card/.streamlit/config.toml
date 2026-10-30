@@ -1,0 +1,26 @@
+# Daylight palette: mint paper, forest green, ink.
+# Green is only the chrome (buttons, wordmark). Each flower colours its own care card (see style.css).
+[theme]
+base = "light"
+primaryColor = "#0A6B3A"
+backgroundColor = "#F4F7F2"
+secondaryBackgroundColor = "#E3ECE1"
+textColor = "#0B0F1A"
+linkColor = "#2F55D4"
+borderColor = "#B9C9BB"
+baseRadius = "0.75rem"
+buttonRadius = "full"
+# Fraunces for headings (a seed-packet, nursery-label feel), Inter for reading. Both load from Google Fonts,
+# so on a venue without internet the browser falls back to its own serif and sans-serif.
+font = "Inter:https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+headingFont = "Fraunces:https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap"
+headingFontSizes = ["2.4rem", "1.8rem", "1.4rem"]
+headingFontWeights = [600, 600, 600]
+chartCategoricalColors = ["#C0306A", "#E8B923", "#6F3C9C"]
+paddingTop = "2.5rem"
+
+[client]
+toolbarMode = "minimal"
+
+[browser]
+gatherUsageStats = false
